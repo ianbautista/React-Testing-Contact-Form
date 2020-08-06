@@ -29,5 +29,15 @@ test("Adds user info when user filled out form and submitted,.", async () => {
 	// assertion
 	expect(await screen.findByText(/Bautista/i)).toBeInTheDocument();
 
+	const errors = screen.queryAllByText(/Looks like there was an error:/i);
+
+	// if (errors.length !== 3) {
+	// 	throw new Error("Received less errors than expected");
+	// }
+
+	// errors.forEach((error) => {
+	// 	expect(error).toBeInTheDocument();
+	// });
+
 	screen.debug();
 });
